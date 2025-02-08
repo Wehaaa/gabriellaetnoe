@@ -38,7 +38,7 @@ const Navigation = () => {
   const NavigationButton = ({ id, text }: { id: string, text: string }) => (
     <Button 
       variant="ghost" 
-      className="text-sm md:text-base uppercase font-normal tracking-wider"
+      className="text-sm md:text-base uppercase font-normal tracking-wider cursor-pointer hover:text-orange-700"
       onClick={() => scrollToSection(id)}
     >
       {text}
