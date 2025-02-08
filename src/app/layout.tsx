@@ -1,27 +1,39 @@
-import { draftMode } from "next/headers";
-import { Inter } from "next/font/google";
-
+import { Montserrat, Shantell_Sans } from "next/font/google";
+import { QueryProvider } from "@/components/app-components/providers/QueryProvider";
+import AuthProvider from "@/components/app-components/providers/AuthProvider";
 import "@/app/globals.css";
+import { blueParadise } from '@/lib/fonts'
 
-import Navigation from "@/components/Globals/Navigation/Navigation";
-import { PreviewNotice } from "@/components/Globals/PreviewNotice/PreviewNotice";
+const montserrat = Montserrat({ 
+  subsets: ["latin"],
+  variable: '--font-montserrat'
+});
 
-const inter = Inter({ subsets: ["latin"] });
+const shantell = Shantell_Sans({
+  subsets: ["latin"],
+  variable: '--font-shantell'
+});
 
-export default function RootLayout({
-  children,
-}: {
+type RootLayoutProps = {
   children: React.ReactNode;
-}) {
-  const { isEnabled } = draftMode();
-
+  params: Promise<{ slug?: string[] }>;
+ };
+ 
+ export default async function RootLayout({
+  children,
+  params,
+ }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {isEnabled && <PreviewNotice />}
-        <Navigation />
-        {children}
+    <html lang="fr">
+      <body className={`${montserrat.className} ${shantell.variable} ${blueParadise.variable}`}>
+        {/* <AuthProvider>
+          <QueryProvider> */}
+            <main>
+              {children}
+            </main>
+          {/* </QueryProvider>
+        </AuthProvider> */}
       </body>
     </html>
   );
-}
+ }
