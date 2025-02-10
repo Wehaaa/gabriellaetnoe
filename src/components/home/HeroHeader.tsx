@@ -8,7 +8,7 @@ const HeroHeader = () => {
         <CarouselItem className="pl-0">
           <header className="relative min-h-[30vh] md:min-h-[50vh] lg:min-h-[70vg] w-full flex justify-center items-center text-center overflow-hidden pt-0">
             {/* Overlay avec fade-in */}
-            <div className="absolute inset-0 bg-white opacity-0 animate-in fade-in-0 duration-1000"></div>
+            <div className="absolute inset-0 bg-white opacity-0"></div>
             
             {/* Contenu principal avec animation de slide et fade */}
             <div className="relative z-10 space-y-3 -top-0">
@@ -26,7 +26,7 @@ const HeroHeader = () => {
             </div>
 
             {/* Carré rotatif avec zoom et fade */}
-            <div className="absolute rotate-[45deg] shadow-lg bg-white animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-3 duration-1000 delay-500">
+            <div className="absolute rotate-[45deg] shadow-lg bg-white">
               <ResponsiveSquare
                 xs={{
                   size: 400,
