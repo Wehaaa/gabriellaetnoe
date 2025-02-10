@@ -1,6 +1,6 @@
 const VenirSection = () => {
   return (
-    <section id="venir" className="max-w-6xl mx-auto my-18 px-6">
+    <section id="venir" className="max-w-6xl mx-auto px-6 py-24">
       <h2 className="text-4xl font-bold mb-12">Comment venir</h2>
       <p className=" mb-16">On vous recommande de louer une voiture ou d'anticiper vos déplacements sur place car Óbidos n'est pas desservie par les transports en commun. Un site de covoiturage est à votre dispo tout plus bas!</p>
 

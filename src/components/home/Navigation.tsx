@@ -36,13 +36,16 @@ const Navigation = () => {
   }
 
   const NavigationButton = ({ id, text }: { id: string, text: string }) => (
-    <Button 
-      variant="ghost" 
-      className="text-sm md:text-base uppercase font-normal tracking-wider cursor-pointer hover:text-orange-700"
-      onClick={() => scrollToSection(id)}
-    >
-      {text}
-    </Button>
+    <div className="relative group">
+      <Button 
+        variant="ghost" 
+        className="text-sm md:text-[15px] uppercase font-normal tracking-wider cursor-pointer hover:text-orange-400 transition-colors duration-200"
+        onClick={() => scrollToSection(id)}
+      >
+        {text}
+        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-orange-300 group-hover:w-full transition-all duration-300 ease-in-out -translate-x-1/2" />
+      </Button>
+    </div>
   )
 
   return (
@@ -61,9 +64,10 @@ const Navigation = () => {
                 <DropdownMenuItem
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className="uppercase text-sm tracking-wider cursor-pointer"
+                  className="uppercase text-sm tracking-wider cursor-pointer hover:text-orange-400 transition-colors duration-200 relative group"
                 >
                   {text}
+                  <span className="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-orange-300 group-hover:w-full transition-all duration-500 ease-in-out -translate-x-1/2" />
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>

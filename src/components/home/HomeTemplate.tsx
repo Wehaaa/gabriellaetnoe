@@ -1,13 +1,11 @@
 'use client'; 
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import HeroHeader from './HeroHeader';
 import LogementSection from './LogementSection';
 import VisitSection from './VisitSection';
 import VenirSection from './VenirSection';
 import RSVPSection from './RSVPSection';
-import ProgramSection from './ProgramSection';
 import Navigation from './Navigation';
 import ProgramSectionSimple from './ProgramSectionSimple';
 
@@ -21,7 +19,6 @@ const HomeTemplate = () => {
 
       <Navigation />
 
-      {/* <ProgramSection /> */}
       <ProgramSectionSimple />
 
       <RSVPSection />
@@ -31,6 +28,8 @@ const HomeTemplate = () => {
       <LogementSection />
 
       <VisitSection />
+
+      <RSVPSection />
 
     </div>
   );

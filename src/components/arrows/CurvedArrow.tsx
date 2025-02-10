@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CurvedArrow = ({ className = '', width = 70, height = 69 }) => {
+const CurvedArrow = ({ className = '', width = 70, height = 69, color = "#000" }) => {
   return (
     <svg 
       width={width} 
@@ -12,8 +12,7 @@ const CurvedArrow = ({ className = '', width = 70, height = 69 }) => {
         d="M69.5.49S22.38,8.43,7.66,64.36"
         style={{ 
           fill: 'none',
-          // stroke: 'rgba(136, 59, 21)',
-          stroke: 'rgba(255, 255, 255, 0.5)',
+          stroke: color,
           strokeMiterlimit: 10 
         }}
       />
@@ -21,8 +20,7 @@ const CurvedArrow = ({ className = '', width = 70, height = 69 }) => {
         d="M.33,54.67s7.62,6.74,6.85,13.26c0,0,2.76-9.08,12.23-9.06"
         style={{ 
           fill: 'none',
-          // stroke: 'rgba(136, 59, 21)',
-          stroke: 'rgba(255, 255, 255, 0.5)',
+          stroke: color,
           strokeMiterlimit: 10 
         }}
       />

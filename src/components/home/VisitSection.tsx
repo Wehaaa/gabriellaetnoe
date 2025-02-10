@@ -9,30 +9,45 @@ import {
 
 const visits = [
   {
-    name: "Sanctuaire de Fatima",
-    description: "15 km — Le célèbre Sanctuaire est un lieu de pèlerinage mondialement connu. Prenez le temps de visiter la basilique, la chapelle des apparitions et d'assister à une messe."
+    name: "Sanctuario de Fátima",
+    description: "Lieu de pèlerinage catholique le plus important du Portugal, dédié à Notre-Dame de Fátima.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Sanctuario-de-Fatima-768x1024.jpg",
   },
   {
-    name: "Monastère de Batalha",
-    description: "Situé au plein patrimoine historique de l'architecture gothique portugaise."
+    name: "Obidos",
+    description: "Village médiéval entouré de remparts, avec des rues pavées et des maisons blanchies à la chaux.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Obidos-768x511.jpg",
   },
   {
-    name: "Monastère d'Alcobaça",
-    description: "Un lieu très chargé d'histoire de PORTUGAL et un monastère impressionnant architecturalement enthousiasmé"
+    name: "Praia de Nazaré",
+    description: "La plage la plus célèbre pour ses vagues géantes qui peuvent atteindre les 30 mètres.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Praia-de-Nazare-768x1024.jpg",
   },
   {
-    name: "Plage de Nazaré",
-    description: "La plage la plus célèbre pour ses vagues géantes qui peuvent atteindre les 30 mètres."
+    name: "Mosteiro da Batalha",
+    description: "Monastère gothique du XIVe siècle classé au patrimoine mondial de l'UNESCO.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Mosteiro-da-Batalha-768x432.jpg",
   },
   {
-    name: "Village médiéval d'Óbidos",
-    description: "Village historique avec ses remparts, ruelles étroites et maisons blanches à l'intérieur. Marché sous la Belle."
+    name: "Mosteiro de Alcobaça",
+    description: "Monastère cistercien du XIIe siècle, également classé au patrimoine mondial de l'UNESCO.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Mosteiro-de-Alcobaca-768x433.jpg",
+  },
+  {
+    name: "Castelo de Ourém",
+    description: "Château médiéval situé sur une colline surplombant la ville d'Ourém.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Castelo-de-Tomar-768x1024.jpg",
+  },
+  {
+    name: "Castelo de Tomar",
+    description: "Château médiéval situé sur une colline surplombant la ville de Tomar.",
+    image: "https://gabriellaetnoe.cubesite.fr/wp-content/uploads/2025/02/Castelo-de-Tomar-768x1024.jpg",
   }
 ]
 
 const VisitSection = () => {
   return (
-    <section id="visiter" className="my-32">
+    <section id="visiter" className="py-24 border-t border-b border-gray-200">
 
       <div className="px-8">
         <div className="max-w-6xl mx-auto">
@@ -49,9 +64,15 @@ const VisitSection = () => {
           {visits.map((visit, i) => (
               <CarouselItem key={i} className="pl-6 basis-[20rem] md:basis-[20rem]">
                 <Card className="border-none shadow-none overflow-hidden rounded-none">
-                  <CardHeader className="p-0">
-                  <div className="bg-gray-200 w-full h-48"></div>
-                  </CardHeader>
+                    <CardHeader className="p-0">
+                    <div className="aspect-3/2">
+                      <img 
+                      src={visit.image}
+                      alt=""
+                      className="object-cover w-full h-full"
+                      />
+                    </div>
+                    </CardHeader>
                   <CardContent className="px-0 py-4">
                     <h3 className="text-lg font-semibold mb-4">{visit.name}</h3>
                     <p className="text-sm text-gray-600">{visit.description}</p>

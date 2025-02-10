@@ -16,7 +16,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CurvedArrow from "./CurvedArrow";
+import CurvedArrow from "../arrows/CurvedArrow";
+import Square from "./Square";
 
 
 const RSVPSection = () => {
@@ -24,12 +25,12 @@ const RSVPSection = () => {
   const [response, setResponse] = useState("");
   const sectionRef = useRef(null);
   
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: sectionRef,
+  //   offset: ["start end", "end start"]
+  // });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   
   const handleOpen = (value: string) => {
     setResponse(value);
@@ -37,34 +38,33 @@ const RSVPSection = () => {
   };
 
   return (
-    <section ref={sectionRef} id="rsvp" className="relative overflow-hidden">
-      <motion.div 
+    <section ref={sectionRef} id="rsvp" className="relative z-10 bg-orange-100">
+
+      {/* <motion.div 
         className="absolute inset-0 w-full h-[100%] -top-[15%] opacity-50"
         style={{
           y,
-          backgroundImage: 'url(/assets/images/ourem.jpg)',
+          backgroundImage: 'url(/assets/background-5.png)',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
-      />
-      <div className="absolute inset-0 bg-[#0a0300]/90" />
+      /> */}
       
-      <div className="min-h-[40vh] md:min-h-[60vh] relative flex items-center justify-center px-6 text-white">
-        <div className="w-full">
-          <h3 className="font-blue-paradise text-3xl text-center mb-8">On vous comptera parmi nous ?</h3>
+      <div className="min-h-[40vh] md:min-h-[60vh] relative flex items-center justify-center px-6">
+        <div className="relative z-10">
+          <h2 className="text-3xl text-center mb-8">On vous comptera parmi nous ?</h2>
           <div>
             <div className="flex justify-center gap-12 mb-4">
             <div className="">
-                <CurvedArrow className="w-14 h-14" />
+                <CurvedArrow color="var(--color-orange-300)" className="w-18 h-18" />
               </div>
               <div className="scale-x-[-100%]">
-                <CurvedArrow className="w-14 h-14" />
+                <CurvedArrow color="var(--color-orange-300)" className="w-18 h-18" />
               </div>
             </div>
-
           </div>
-          <div className="flex justify-center gap-3">
+          <div className="flex justify-center gap-3 md:gap-8">
             <Button 
               className="bg-white/90 hover:bg-white border-black/20 h-14 text-xs md:text-md md:text-[15px] font-medium tracking-wide md:w-48 p-4 h-12 md:h-14 text-gray-800" 
               size="lg" 
@@ -125,15 +125,6 @@ const RSVPSection = () => {
           </div>
         </DialogContent>
       </Dialog>
-
-      {/* <div className="bg-orange-100 absolute inset-0 object-cover w-full h-full -z-10">
-        <img 
-          src="/assets/background-5.png" 
-          alt="" 
-          className="w-full h-full object-cover opacity-30 scale-[1.3] blur-[0px]"
-        />
-      </div> */}
-        {/* <div className="absolute inset-12 border border-white" /> */}
     </section>
   );
 };

@@ -1,10 +1,12 @@
 import { FlowerIcon } from 'lucide-react';
 import React from 'react';
+import CurvedArrow from '../arrows/CurvedArrow';
+import DottedLine from '../arrows/DottedLine';
 
 type ImageType = {
   src: string;
   alt: string;
-  className?: string; // Ajout de classes CSS personnalisables
+  className?: string;
 };
 
 type EventType = {
@@ -13,9 +15,16 @@ type EventType = {
   description?: string;
 };
 
+type BeforeAfterContentType = {
+  content: React.ReactNode;
+  wrapperClassName?: string;
+};
+
 type SectionType = {
   id: number;
   events: EventType[];
+  before?: BeforeAfterContentType;
+  after?: BeforeAfterContentType;
 };
 
 type ProgramDataType = {
@@ -28,17 +37,17 @@ const programData: ProgramDataType = {
     { 
       src: '/assets/images/eglise.jpg', 
       alt: "L'église",
-      className: "" // Example de classe personnalisée
+      className: ""
     },
     { 
       src: '/assets/images/quinta.jpg', 
       alt: "La Quinta",
-      className: "md:mt-8" // Example de classe personnalisée
+      className: "md:mt-2"
     },
     { 
       src: '/assets/images/maison.jpg', 
       alt: "La maison",
-      className: "md:relative -top-16" // Example de classe personnalisée
+      className: "md:relative -top-0"
     }
   ],
   sections: [
@@ -47,7 +56,11 @@ const programData: ProgramDataType = {
       events: [
         { time: '13h30', title: "Rendez-vous à l'Église" },
         { time: '15h', title: "Début de la messe" }
-      ]
+      ],
+      before: {
+        content: <CurvedArrow color='var(--color-orange-400)' className="w-14 h-14 text-rose-400 md:scale-x-[-1]" />,
+        wrapperClassName: "absolute rotate-[-30deg] md:rotate-0 -top-20 -left-4 md:-left-12"
+      }
     },
     {
       id: 2,
@@ -67,7 +80,11 @@ const programData: ProgramDataType = {
           title: "Nuit de danse enflammée",
           description: "La fête continue avec de la musique et des danses jusqu'au bout de la nuit !"
         }
-      ]
+      ],
+      before: {
+        content: <DottedLine color='var(--color-orange-300)' className="w-3 h-24 scale-x-[-1]" />,
+        wrapperClassName: "relative -top-10 left-0 -my-10 md:-my-12"
+      },
     },
     {
       id: 3,
@@ -77,7 +94,11 @@ const programData: ProgramDataType = {
           title: "Rendez-vous au Casal do Aroeiro",
           description: "Nous serons ravis de vous retrouver pour prolonger cette joie et partager encore plus de moments inoubliables."
         }
-      ]
+      ],
+      before: {
+        content: <DottedLine color='var(--color-orange-300)' className="w-3 h-24 scale-x-[-1]" />,
+        wrapperClassName: "relative -top-10 left-0 -mt-12 -mb-10 md:-top-0 md:left-0 md:mt-0 md:-mb-3"
+      },
     }
   ]
 };
@@ -98,20 +119,25 @@ const Section: React.FC<{ section: SectionType; image: ImageType; isLast: boolea
       <img
         src={image.src}
         alt={image.alt}
-        className={`h-[120px] md:h-[240px] w-full object-contain object-right md:object-center`}
+        className="h-[120px] md:h-[240px] w-full object-contain object-right md:object-center"
       />
     </div>
-    <div className="relative md:w-2/3 space-y-8 pt-8">
-      {section.events.map((event, index) => (
-        <Event key={index} {...event} />
-      ))}
-      {!isLast && (
-        <div className="absolute -bottom-20 md:static max-w-20 md:mt-18 md:mb-12 md:space-y-1.5">
-          {/* <hr className="border-orange-200" />
-          <hr className="border-orange-200" /> */}
-          <span className="text-orange-200">
-            *****
-          </span>
+    <div className="relative md:w-2/3">
+      {section.before && (
+        <div className={section.before.wrapperClassName}>
+          {section.before.content}
+        </div>
+      )}
+      
+      <div className="space-y-8 pt-8">
+        {section.events.map((event, index) => (
+          <Event key={index} {...event} />
+        ))}
+      </div>
+
+      {section.after && (
+        <div className={section.after.wrapperClassName}>
+          {section.after.content}
         </div>
       )}
     </div>

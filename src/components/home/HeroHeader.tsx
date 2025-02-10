@@ -3,7 +3,7 @@ import ResponsiveSquare from "@/components/home/ResponsiveSquare";
 
 const HeroHeader = () => {
   return (
-    <Carousel className="border-b border-gray-200">
+    <Carousel className="border-b border-gray-200 select-none">
       <CarouselContent>
         <CarouselItem className="pl-0">
           <header className="relative min-h-[30vh] md:min-h-[50vh] lg:min-h-[70vg] w-full flex justify-center items-center text-center overflow-hidden pt-0">
