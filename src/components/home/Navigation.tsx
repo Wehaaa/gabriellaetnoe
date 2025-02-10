@@ -56,11 +56,11 @@ const Navigation = () => {
     <div className="relative group">
       <Button 
         variant="ghost" 
-        className="text-sm md:text-[15px] uppercase font-normal tracking-wider cursor-pointer hover:text-orange-400 transition-colors duration-200"
+        className="text-sm md:text-[15px] uppercase font-normal tracking-wider cursor-pointer"
         onClick={() => handleNavigation(id)}
       >
         {text}
-        <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-orange-300 group-hover:w-full transition-all duration-300 ease-in-out -translate-x-1/2" />
+        <span className="absolute bottom-0 left-1/2 w-0 h-0.25 bg-orange-300 group-hover:w-full transition-all duration-400 ease-in-out -translate-x-1/2" />
       </Button>
     </div>
   )
@@ -85,7 +85,6 @@ const Navigation = () => {
                     className="uppercase text-sm tracking-wider cursor-pointer hover:text-orange-400 transition-colors duration-200 relative group"
                   >
                     {text}
-                    <span className="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-orange-300 group-hover:w-full transition-all duration-500 ease-in-out -translate-x-1/2" />
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
