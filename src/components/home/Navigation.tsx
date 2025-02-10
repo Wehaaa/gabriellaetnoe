@@ -67,7 +67,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="sticky top-0 bg-white z-10 w-full border-b border-gray-200">
+      <nav className="sticky top-0 bg-white z-10 w-full border-b border-gray-200 z-30">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6 py-4">
           {isMobile ? (
             <DropdownMenu>
