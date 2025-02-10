@@ -75,10 +75,10 @@ const LogementSection = () => {
         <h2 className="text-4xl font-bold mb-12">Se loger</h2>
         <div className="text-lg">
           <p className="mb-6">
-            Pour que votre séjour soit le plus agréable possible, nous avons rassemblé quelques options d'hébergements non loin des lieux de la cérémonie. On vous les recommande car ils sont près du lieu de la navette qui assurera les retours le soir du mariage.
+          Pour que votre séjour soit le plus agréable possible, nous avons rassemblé quelques options d'hébergement tout près du lieu de la cérémonie. On vous les recommande car ils sont tous sur la route de la navette qui assurera les retours le soir du mariage.
           </p>
           <p className="mb-6">
-            N'oubliez pas de réserver votre hébergement le plus tôt possible, car les places peuvent se remplir rapidement autour de cette période estivale. Si vous avez des questions ou besoin d'aide pour vos réservations, n'hésitez pas à contacter vos témoins.
+          N'oubliez pas de réserver votre hébergement le plus tôt possible, car les places peuvent se remplir rapidement autour de cette période estivale. Si vous avez des questions ou besoin d'aide pour vos réservations, n'hésitez pas à contacter nos témoins.
           </p>
         </div>
       </div>
