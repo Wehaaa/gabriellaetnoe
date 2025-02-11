@@ -1,8 +1,12 @@
 import HomeTemplate from "@/components/home/HomeTemplate";
 
+
 const Home = () => {
+
   return (
-    <HomeTemplate />
+    <div>
+      <HomeTemplate />
+    </div>
   );
 }
 

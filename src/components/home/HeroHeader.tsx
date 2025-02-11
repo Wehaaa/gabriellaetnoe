@@ -7,6 +7,7 @@ const HeroHeader = () => {
       <CarouselContent>
         <CarouselItem className="pl-0">
           <header className="relative min-h-[30vh] md:min-h-[50vh] lg:min-h-[70vg] w-full flex justify-center items-center text-center overflow-hidden pt-0">
+            
             {/* Overlay avec fade-in */}
             <div className="absolute inset-0 bg-white opacity-0"></div>
             
@@ -113,11 +114,6 @@ const HeroHeader = () => {
               />
             </div>
             <div className="bg-orange-100 absolute inset-0 object-cover w-full h-full -z-10">
-              <img 
-                src="/assets/background-5.png" 
-                alt="" 
-                className="w-full h-full object-cover opacity-30 scale-[1.3] blur-[0px]"
-              />
             </div>
           </header>
         </CarouselItem>
