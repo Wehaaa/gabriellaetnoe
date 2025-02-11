@@ -36,7 +36,7 @@ const TourismSection = ({ sectionTitle, introText, places }: TourismSectionProps
               <CarouselItem key={i} className="basis-[20rem] md:basis-[20rem] pl-6">
                 <Card className="border-none shadow-none overflow-hidden rounded-none">
                   <CardHeader className="p-0">
-                    <div className="aspect-3/2">
+                    <div className="w-full aspect-3/2 flex items-center justify-center overflow-hidden">
                       <img 
                         src={place.imageUrl}
                         alt={place.name}

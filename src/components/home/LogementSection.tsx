@@ -47,7 +47,7 @@ const LogementSection = ({ sectionTitle, introText, accommodations }: LogementSe
                 <Link href={accommodation.link} passHref target="_blank">
                   <Card className="border-none shadow-none overflow-hidden rounded-none">
                     <CardHeader className="p-0">
-                      <div className="aspect-3/2">
+                      <div className="w-full aspect-3/2 flex items-center justify-center overflow-hidden">
                         <img 
                           src={accommodation.imageUrl}
                           alt={`${accommodation.name}`}
