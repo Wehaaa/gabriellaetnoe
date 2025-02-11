@@ -252,7 +252,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({
       <Button 
         type="submit" 
         disabled={isSubmitting} 
-        className={`w-full rounded-sm h-12 font-medium px-6 py-3 transition-all duration-200
+        className={`w-full rounded-sm h-12 font-medium px-6 py-3 transition-all duration-200 text-white
           ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 active:bg-gray-900'}`}
       >
         {isSubmitting ? (
